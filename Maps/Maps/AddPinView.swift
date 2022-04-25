@@ -15,6 +15,7 @@ struct AddPinView: View {
     
     var body: some View {
         VStack {
+            Text("Name your pinned location:").bold()
             TextField("Name", text: $name)
             Button("Save") {
                 onSave(name, location)
