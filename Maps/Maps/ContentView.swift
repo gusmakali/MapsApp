@@ -29,24 +29,27 @@ struct ContentView: View {
             NavigationLink(destination: PinList(pins: pins)){
                 ZStack {
 //                    Color.blue.frame(width: 100, height: 50)
+                    
+                    RoundedRectangle(cornerRadius: 15, style: .continuous)
+                        .stroke(Color.blue, lineWidth: 1)
+                        .frame(width: 115, height: 50)
+                        .background(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
                     Text("My locations").foregroundColor(.blue)
                         .font(.subheadline)
                         .fontWeight(.bold)
-//                        .background(Color.white)
-                        .overlay(
-                                RoundedRectangle(cornerRadius: 15, style: .continuous)
-                                    .stroke(Color.blue, lineWidth: 1)
-                                    .frame(width: 100, height: 50)
-                        )
-                
                 }
             }
-        }.sheet(isPresented: $showSaveModal) {
+        }.sheet(isPresented: $showSaveModal){
+        
             if (addPinViewSheet != nil) {
                 addPinViewSheet
             }
+            
+            
         }
-        .navigationTitle("My map")
+        .navigationTitle("")
+
 //            .frame(width: 100, height: 100, alignment: .center)
             .padding(20)
     }
