@@ -53,12 +53,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     {
         mapView = MKMapView()
         
-        let leftMargin:CGFloat = 10
-        let topMargin:CGFloat = 10
-        let mapWidth:CGFloat = view.frame.size.width-20
-        let mapHeight:CGFloat = 450
+//        let leftMargin:CGFloat = 10
+//        let topMargin:CGFloat = 10
+//        let mapWidth:CGFloat = view.frame.size.width-20
+//        let mapHeight:CGFloat = 450
         
-        mapView.frame = CGRect(x:leftMargin, y:topMargin, width:mapWidth, height:mapHeight)
+        mapView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         
         mapView.mapType = MKMapType.standard
         mapView.isZoomEnabled = true
