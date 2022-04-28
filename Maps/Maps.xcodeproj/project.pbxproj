@@ -19,6 +19,9 @@
 		2A3C0DE528117994008E9B75 /* PinCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C0DE428117994008E9B75 /* PinCard.swift */; };
 		2A415C3A28118D4E001FE218 /* AddPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A415C3928118D4E001FE218 /* AddPinView.swift */; };
 		2A415C3C2812C938001FE218 /* PinList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A415C3B2812C938001FE218 /* PinList.swift */; };
+		2A415C3F28196DFD001FE218 /* PageSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2A415C3E28196DFD001FE218 /* PageSheet */; };
+		2A415C4128196DFD001FE218 /* PageSheetCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2A415C4028196DFD001FE218 /* PageSheetCore */; };
+		2A415C4328196DFD001FE218 /* PageSheetPlus in Frameworks */ = {isa = PBXBuildFile; productRef = 2A415C4228196DFD001FE218 /* PageSheetPlus */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A3C0DE1280D9014008E9B75 /* PartialSheet in Frameworks */,
+				2A415C3F28196DFD001FE218 /* PageSheet in Frameworks */,
+				2A415C4128196DFD001FE218 /* PageSheetCore in Frameworks */,
+				2A415C4328196DFD001FE218 /* PageSheetPlus in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +165,9 @@
 			name = Maps;
 			packageProductDependencies = (
 				2A3C0DE0280D9014008E9B75 /* PartialSheet */,
+				2A415C3E28196DFD001FE218 /* PageSheet */,
+				2A415C4028196DFD001FE218 /* PageSheetCore */,
+				2A415C4228196DFD001FE218 /* PageSheetPlus */,
 			);
 			productName = Maps;
 			productReference = 2A1DB54E2806F1C3004878FF /* Maps.app */;
@@ -234,6 +243,7 @@
 			mainGroup = 2A1DB5452806F1C3004878FF;
 			packageReferences = (
 				2A3C0DDF280D9014008E9B75 /* XCRemoteSwiftPackageReference "PartialSheet" */,
+				2A415C3D28196DFD001FE218 /* XCRemoteSwiftPackageReference "PageSheet" */,
 			);
 			productRefGroup = 2A1DB54F2806F1C3004878FF /* Products */;
 			projectDirPath = "";
@@ -621,6 +631,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		2A415C3D28196DFD001FE218 /* XCRemoteSwiftPackageReference "PageSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ericlewis/PageSheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -628,6 +646,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2A3C0DDF280D9014008E9B75 /* XCRemoteSwiftPackageReference "PartialSheet" */;
 			productName = PartialSheet;
+		};
+		2A415C3E28196DFD001FE218 /* PageSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A415C3D28196DFD001FE218 /* XCRemoteSwiftPackageReference "PageSheet" */;
+			productName = PageSheet;
+		};
+		2A415C4028196DFD001FE218 /* PageSheetCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A415C3D28196DFD001FE218 /* XCRemoteSwiftPackageReference "PageSheet" */;
+			productName = PageSheetCore;
+		};
+		2A415C4228196DFD001FE218 /* PageSheetPlus */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A415C3D28196DFD001FE218 /* XCRemoteSwiftPackageReference "PageSheet" */;
+			productName = PageSheetPlus;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

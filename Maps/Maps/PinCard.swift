@@ -17,7 +17,7 @@ struct PinCard: View {
             PinCardMapView(pin: pin)
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
-            
+                
             VStack(alignment: .leading) {
                             Text(pin.name)
                                 .font(.title)

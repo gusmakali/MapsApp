@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MapKit
+import PageSheet
 
 struct ContentView: View {
     @State var pins: [Pin] = []
@@ -24,6 +25,7 @@ struct ContentView: View {
                     ))
                     showSaveModal = false
                 })
+                
             }
             Spacer(minLength: 30)
             NavigationLink(destination: PinList(pins: pins)){
@@ -40,10 +42,12 @@ struct ContentView: View {
                         .fontWeight(.bold)
                 }
             }
-        }.sheet(isPresented: $showSaveModal){
+        }.pageSheet(isPresented: $showSaveModal) {
         
             if (addPinViewSheet != nil) {
-                addPinViewSheet
+                addPinViewSheet.sheetPreference(
+                    SheetPreference.detents([.medium()])
+                )
             }
             
             
