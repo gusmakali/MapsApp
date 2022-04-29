@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PartialSheet
 
 @main
 struct MapsApp: App {
@@ -13,7 +14,7 @@ struct MapsApp: App {
         WindowGroup {
             NavigationView  {
                 ContentView()
-            }
+            }.attachPartialSheetToRoot()
         }
     }
 }

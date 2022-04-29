@@ -7,25 +7,18 @@
 
 import SwiftUI
 import MapKit
-import PageSheet
+import PartialSheet
 
 struct ContentView: View {
     @State var pins: [Pin] = []
     @State var showSaveModal = false
-    @State var addPinViewSheet: AddPinView?
+    @State var location: CLLocationCoordinate2D?
     
     var body: some View {
         VStack {
             LMMapView(pins: pins) { location in
+                self.location = location
                 showSaveModal = true
-                addPinViewSheet = AddPinView(location: location, onSave: { name, location in
-                    pins.append(Pin(
-                        location: location,
-                        name: name
-                    ))
-                    showSaveModal = false
-                })
-                
             }
             Spacer(minLength: 30)
             NavigationLink(destination: PinList(pins: pins)){
@@ -42,17 +35,19 @@ struct ContentView: View {
                         .fontWeight(.bold)
                 }
             }
-        }.pageSheet(isPresented: $showSaveModal) {
-        
-            if (addPinViewSheet != nil) {
-                addPinViewSheet.sheetPreference(
-                    SheetPreference.detents([.medium()])
-                )
+        }.partialSheet(isPresented: $showSaveModal) {
+            if let location = location {
+                AddPinView(location: location, onSave: { name, location in
+                    pins.append(Pin(
+                        location: location,
+                        name: name
+                    ))
+                    showSaveModal = false
+                }).padding(30)
             }
-            
-            
+        
         }
-        .navigationTitle("")
+            .navigationTitle("")
 
 //            .frame(width: 100, height: 100, alignment: .center)
             .padding(20)
