@@ -9,27 +9,33 @@ import SwiftUI
 import MapKit
 
 struct PinList: View {
-    let pins: [Pin]
+    @Binding var pins: [Pin]
     
     var body: some View {
-        List(pins, id:\.name) { pin in
+        List{
+            ForEach(pins, id: \.id) { pin in
             NavigationLink(destination: PinCard(pin:pin)) {
                 Text(pin.name)
             }
-        }
-        .navigationTitle("Pins")
-    }
+            
+        }.onDelete(perform: delete)
         
+    }.navigationTitle("Pins")
+}
+   
+    func delete(at offsets: IndexSet) {
+        pins.remove(atOffsets: offsets)
+    }
 }
 
 
 struct PinList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            PinList(pins: [
+            PinList(pins: .constant([
                 Pin(location: CLLocationCoordinate2DMake(0, 0), name: "Bla"),
                 Pin(location: CLLocationCoordinate2DMake(0, 0), name: "Foo"),
-            ])
+            ]))
         }
     }
 }

@@ -16,11 +16,11 @@ struct PinCard: View {
         ScrollView {
             PinCardMapView(pin: pin)
                 .ignoresSafeArea(edges: .top)
-                .frame(height: 300)
+                .frame(height: 450)
                 
             VStack(alignment: .leading) {
                             Text(pin.name)
-                                .font(.title)
+                    .font(.title3)
             }
         }
     }

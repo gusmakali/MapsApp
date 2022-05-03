@@ -16,10 +16,11 @@ struct AddPinView: View {
     var body: some View {
         VStack {
             Text("Name your pinned location:").bold()
+                .padding(30)
             TextField("Name", text: $name)
             Button("Save") {
                 onSave(name, location)
-            }
+            }.buttonStyle(BlueButton())
         }
     }
 }
@@ -31,3 +32,16 @@ struct AddPinView_Previews: PreviewProvider {
         })
     }
 }
+
+
+struct BlueButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .background(Color(red: 0, green: 0, blue: 0.5))
+            .foregroundColor(.white)
+            .clipShape(Capsule())
+    }
+}
+
+

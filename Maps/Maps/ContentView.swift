@@ -21,16 +21,17 @@ struct ContentView: View {
                 showSaveModal = true
             }
             Spacer(minLength: 30)
-            NavigationLink(destination: PinList(pins: pins)){
+            NavigationLink(destination: PinList(pins: $pins)){
                 ZStack {
 //                    Color.blue.frame(width: 100, height: 50)
                     
                     RoundedRectangle(cornerRadius: 15, style: .continuous)
-                        .stroke(Color.blue, lineWidth: 1)
+                        .stroke(Color(red: 0, green: 0, blue: 0.5), lineWidth: 1)
                         .frame(width: 115, height: 50)
                         .background(Color.white)
                         .clipShape(RoundedRectangle(cornerRadius: 15))
-                    Text("My locations").foregroundColor(.blue)
+                    Text("My locations")
+                        .foregroundColor(Color(red: 0, green: 0, blue: 0.5))
                         .font(.subheadline)
                         .fontWeight(.bold)
                 }
